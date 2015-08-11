@@ -1,0 +1,76 @@
+#track {
+	margin: 10px auto 0;
+	width: 248px;
+	overflow: hidden
+}
+
+#input {
+	width: 300px;
+	margin: auto;
+}
+
+.hidden{
+	display: none;
+}
+
+.shown{
+	display: block;
+}
+
+.piece {
+	height: 120px;
+	width: 120px;
+	display: block;
+	background-image: url("road.jpg");
+	background-size: cover;
+	float: left;
+	margin: 2px;
+}
+
+#playersDropDown {
+	width: 50px;
+}
+
+#dropbox {
+	width: 210px;
+	margin: auto;
+}
+
+.piece.active {
+	background-image: url("player1active.jpg");
+	background-size: cover;
+}
+
+input[type=submit] {
+	margin: 10px auto;	
+	text-align: center;
+}
+
+li {
+	list-style: none;
+}
+
+ul {
+	display: block;
+	padding: 0;
+	float: left;
+}
+
+body {
+	font-family: 'Permanent Marker' 'Comic Sans MS';
+	background: #f0f9ff; /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  #f0f9ff 0%, #cbebff 47%, #19aaff 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#f0f9ff), color-stop(47%,#cbebff), color-stop(100%,#19aaff)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  #f0f9ff 0%,#cbebff 47%,#19aaff 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  #f0f9ff 0%,#cbebff 47%,#19aaff 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  #f0f9ff 0%,#cbebff 47%,#19aaff 100%); /* IE10+ */
+	background: linear-gradient(135deg,  #f0f9ff 0%,#cbebff 47%,#19aaff 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#19aaff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+h1 {
+	text-align: center;
+	font-size: 72px;
+	margin-top: .5em;
+}

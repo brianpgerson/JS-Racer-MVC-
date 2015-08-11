@@ -1,0 +1,40 @@
+<html>
+<head>	
+	<title>Racer</title>
+	<link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="racerinit.js"></script>
+	<script type="text/javascript" src="racercontroller.js"></script>
+	<script type="text/javascript" src="racermodel.js"></script>
+	<script type="text/javascript" src="racerview.js"></script>
+	<link rel="stylesheet" href="racerMVC.css">
+
+</head>
+<body>
+	<h1>Let's Race, Biatch</h1>
+
+	<div id = "input">
+		<div id = "dropbox">
+			<label for="players">How Many Players:</label>
+			<select id="playersDropDown">
+				<option value='' disabled selected style='display:none;'>?</option>
+				<option value="1">1</option>
+				<option value="2">2</option>     
+				<option value="3">3</option>
+				<option value="4">4</option>     
+				<option value="5">5</option>     
+			</select>
+		</div>
+		<input type="submit" id="startGame" value="Start Your Engines!" class = "hidden"/>
+
+		<div id = "playerKeys">
+
+
+		</div>
+		<br />
+		<br />
+
+	</div>
+	<div id = "track">
+	</div>
+</body>
+</html>
