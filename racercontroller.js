@@ -39,7 +39,7 @@ Controller.prototype.sanitizeInputs = function(letter){
 }
 
 
-//is this the fastest way to do this?
+//is this the fastest way to do this?	
 Controller.prototype.updatePlayerPosition = function(event){ 
 	for (i=0;i<this.game.playerCount;i++){
 		if (event.charCode == this.game.players[i]["charCode"]) {
