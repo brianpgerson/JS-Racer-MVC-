@@ -76,3 +76,27 @@ View.prototype.createColumn = function(playerNum){
 	}
 	return trackHTML;
 }
+
+//==============================
+//  player movement
+//==============================
+
+
+View.prototype.moveRacers = function(whichRacer, position){
+	var racetrack = document.getElementById("track");
+	for (i = 0; i < racetrack.length; i++){
+		racetrack[i].setAttribute("class", "piece");
+	}
+	racetrack.childNodes[whichRacer].childNodes[position].setAttribute("class", "piece active");
+}
+
+
+function reset(nodeList){
+	for (i=0;i<nodeList.length;i++) {
+		nodeList[i].setAttribute("class", "piece");
+	}
+}
+
+
+
+
