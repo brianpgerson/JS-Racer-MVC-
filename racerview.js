@@ -84,19 +84,31 @@ View.prototype.createColumn = function(playerNum){
 
 View.prototype.moveRacers = function(whichRacer, position){
 	var racetrack = document.getElementById("track");
-	for (i = 0; i < racetrack.length; i++){
-		racetrack[i].setAttribute("class", "piece");
-	}
-	racetrack.childNodes[whichRacer].childNodes[position].setAttribute("class", "piece active");
+	this.reset(document.getElementById("player"+whichRacer).querySelectorAll(".active"));
+	racetrack.childNodes[(whichRacer+1)].childNodes[position-1].childNodes[0].setAttribute("class", "piece active");
+	console.log(whichRacer, position, racetrack);
+}
+
+View.prototype.gameWin = function(player) {
+	alert("Player " + (player+1) + " won!");
+	this.reset(document.querySelectorAll(".active"));
 }
 
 
-function reset(nodeList){
-	for (i=0;i<nodeList.length;i++) {
-		nodeList[i].setAttribute("class", "piece");
+View.prototype.reset = function(nodeList){
+	if (nodeList.length == 0){
+		return
 	}
-}
+	else if (nodeList.length == 1){
+		nodeList[0].setAttribute("class", "piece");
+		//WHY WAS THE BELOW FUCKING WITH ME
+	} else if (nodeList.length > 1){
+		for (i=0;i<nodeList.length;i++){
+			nodeList[i].setAttribute("class", "piece")
+		}
+	}
 
+}
 
 
 

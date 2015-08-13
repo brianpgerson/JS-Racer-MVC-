@@ -42,9 +42,24 @@ Controller.prototype.sanitizeInputs = function(letter){
 //is this the fastest way to do this?	
 Controller.prototype.updatePlayerPosition = function(event){ 
 	for (i=0;i<this.game.playerCount;i++){
-		if (event.charCode == this.game.players[i]["charCode"]) {
+		if (event.charCode == this.game.players[i]["charCode"]){
 			this.game.players[i]["position"]++;
+			this.handleNewPosition(i);
 		}
 	}	
 	console.log(this.game.players);
+}
+
+Controller.prototype.handleNewPosition = function(player){
+			this.view.moveRacers(player, this.game.players[player]["position"]);
+			this.checkForFinish(player, this.game.players[player]["position"], this.game.finishLine);
+}
+
+Controller.prototype.checkForFinish = function(player, position, finish){
+	console.log(i);
+	if (this.game.players[player].position == finish){
+		this.view.gameWin(player);
+		this.game.players[player].winCount++;
+		this.game.resetPlayerPos();
+	}
 }

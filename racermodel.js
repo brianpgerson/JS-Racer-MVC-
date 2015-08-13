@@ -14,3 +14,8 @@ function Player(id, charCode){
 	this.winCount = 0;
 }
 
+Game.prototype.resetPlayerPos = function(){
+	for (i=0;i<this.playerCount;i++){
+		this.players[i].position = 0;
+	}
+}
