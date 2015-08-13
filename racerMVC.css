@@ -36,8 +36,29 @@
 	margin: auto;
 }
 
-.piece.active {
+
+.piece.active0 {
 	background-image: url("player1active.jpg");
+	background-size: cover;
+}
+
+.piece.active1 {
+	background-image: url("player2active.jpg");
+	background-size: cover;
+}
+
+.piece.active2 {
+	background-image: url("player3active.jpg");
+	background-size: cover;
+}
+
+.piece.active3 {
+	background-image: url("player4active.jpg");
+	background-size: cover;
+}
+
+.piece.active4 {
+	background-image: url("player5active.jpg");
 	background-size: cover;
 }
 
@@ -73,4 +94,18 @@ h1 {
 	text-align: center;
 	font-size: 72px;
 	margin-top: .5em;
+}
+
+h2 {
+	text-align: center;
+}
+
+p {
+	text-align: center;
+}
+
+span {
+	font-size: 1.1em;
+	font-weight: bold;
+	color: red;
 }

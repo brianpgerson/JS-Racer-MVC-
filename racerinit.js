@@ -5,5 +5,5 @@ function init(){
 	var game = new Game;
 	var controller = new Controller(view, game);
 	controller.bindEventListeners();
-	console.log(controller);
+	controller.view.hide(document.getElementById("scoreBoard"));
 }

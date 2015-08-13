@@ -13,7 +13,7 @@ View.prototype.startGame = function(){
 	return document.getElementById("startGame")
 }
 //==============================
-//  input section code
+//  input section
 //==============================
 
 View.prototype.resetInputField = function(nodeList){
@@ -50,14 +50,21 @@ View.prototype.show = function(section){
 }
 
 //==============================
-//  track generation code
+//  track generation 
 //==============================
 
 View.prototype.setupGame = function(players){
 	this.hide(document.getElementById("input"));
+	this.show(document.getElementById("scoreBoard"));
 	this.setUpTrack(players, TRACK_LENGTH);
 }
 
+View.prototype.setupScoreboard = function(players){
+	for(i=0;i<players;i++){
+		var indieScores = "<p>Player " +(i+1)+ ": <span id='scoreFor"+i+"''>0</span></p>";
+		document.getElementById("scoreBoard").innerHTML += indieScores;
+	}
+}
 
 View.prototype.setUpTrack = function(playerNum, TRACK_LENGTH) {
 	var block = this.createColumn(TRACK_LENGTH);
@@ -84,14 +91,15 @@ View.prototype.createColumn = function(playerNum){
 
 View.prototype.moveRacers = function(whichRacer, position){
 	var racetrack = document.getElementById("track");
-	this.reset(document.getElementById("player"+whichRacer).querySelectorAll(".active"));
-	racetrack.childNodes[(whichRacer+1)].childNodes[position-1].childNodes[0].setAttribute("class", "piece active");
+	this.reset(document.getElementById("player"+whichRacer).querySelectorAll(".active"+whichRacer));
+	racetrack.childNodes[(whichRacer+1)].childNodes[position-1].childNodes[0].setAttribute("class", "piece active"+whichRacer);
 	console.log(whichRacer, position, racetrack);
 }
 
-View.prototype.gameWin = function(player) {
+View.prototype.gameWin = function(player, wincount) {
 	alert("Player " + (player+1) + " won!");
-	this.reset(document.querySelectorAll(".active"));
+	this.reset(document.querySelectorAll(".piece"));
+	document.getElementById("scoreFor"+player).innerHTML = wincount;
 }
 
 

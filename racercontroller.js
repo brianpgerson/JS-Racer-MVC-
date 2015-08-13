@@ -16,6 +16,7 @@ Controller.prototype.handleInitializeClick = function(){
 		this.game.playerCount = this.game.players.length;
 	}
 	this.view.setupGame(characters.length);
+	this.view.setupScoreboard(characters.length);
 	document.addEventListener('keypress', this.updatePlayerPosition.bind(this));
 }
 
@@ -58,8 +59,8 @@ Controller.prototype.handleNewPosition = function(player){
 Controller.prototype.checkForFinish = function(player, position, finish){
 	console.log(i);
 	if (this.game.players[player].position == finish){
-		this.view.gameWin(player);
 		this.game.players[player].winCount++;
+		this.view.gameWin(player, this.game.players[player].winCount);
 		this.game.resetPlayerPos();
 	}
 }
