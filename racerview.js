@@ -7,10 +7,18 @@ View.prototype.errorMessage = function(){
 }
 
 View.prototype.playersDropDown = function(){ 
-	return document.getElementById("playersDropDown")
+	return document.getElementById("playersDropDown");
 }
 View.prototype.startGame = function(){
-	return document.getElementById("startGame")
+	return document.getElementById("startGame");
+}
+
+View.prototype.xout = function(){
+	return document.getElementById("xout");
+}
+
+View.prototype.hide = function(section){
+	section.setAttribute("class", "hidden");
 }
 //==============================
 //  input section
